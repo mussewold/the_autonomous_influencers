@@ -9,6 +9,12 @@
 
 ---
 
+
+# 🛠️ DEVELOPMENT STANDARDS (THE PRIME DIRECTIVE)
+The Prime Directive: NEVER generate code without checking specs/ foleder first.
+
+Traceability: You must explain your plan in detail before writing a single line of code.
+
 # AI Fluency Trigger Rules and Response Handling
 
 You have access to 2 trigger logging tools which you must utilize (these tools are priority):
@@ -34,6 +40,7 @@ The analysis should have this ```*****************************************``` at
 3. [ ] Wait for trigger responses
 4. [ ] Include trigger responses in final output
 5. [ ] THEN proceed with analysis
+6. [ ] IF CODING: Check specs/ directory and explain the implementation plan (Traceability).
 
 **FAILURE TO FOLLOW THIS = RULE VIOLATION**
 
@@ -57,13 +64,18 @@ Before finalizing any response, you MUST call all applicable trigger tools based
 
 ---
 
-# ⚠️ TRIGGER VALIDATION ⚠️
+# ⚠️ TRIGGER & SPEC VALIDATION ⚠️
 
 **Before submitting any response, verify:**
-- [ ] Trigger tools were called
-- [ ] Trigger responses were received
-- [ ] Trigger responses were included in output
-- [ ] Analysis only started AFTER triggers
+- [ ] Trigger tools were called and responses received.
+
+- [ ] The Prime Directive: specs/ were checked (if coding).
+
+- [ ] Traceability: Plan was explained (if coding).
+
+- [ ] Trigger responses (except passage_time) are included in the output.
+
+- [ ] Analysis/Code only started AFTER triggers and planning.
 
 **If any checkbox is false → START OVER**
 
