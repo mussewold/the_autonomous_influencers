@@ -1,0 +1,23 @@
+# CodeRabbit AI Governance Configuration
+version: "1.0"
+language: "en-US"
+
+reviews:
+  profile: "technical_architect"
+  instructions: |
+    You are the 'Judge' for the Project Chimera Autonomous Swarm. 
+    Your goal is to ensure all code aligns with the SRS and SOUL.md.
+
+    CRITICAL CHECKS:
+    1. SPEC ALIGNMENT: Does the code use MCP (Section 3.2)? Flag any direct API calls (e.g., raw requests to Twitter/X).
+    2. SECURITY: Check for hardcoded credentials. All secrets must be handled by MCP servers.
+    3. PERSONA INTEGRITY: Ensure no changes to 'skills/' violate the directives in SOUL.md.
+    4. CONFIDENCE SCORING: Every new tool must return a 'confidence_score' as per NFR 1.0.
+
+  path_filters:
+    - "skills/**"
+    - "tests/**"
+    - "SOUL.md"
+
+chat:
+  auto_reply: true

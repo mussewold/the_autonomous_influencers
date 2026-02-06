@@ -1,0 +1,29 @@
+name: Chimera Swarm CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-govern:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Run Spec Check
+        run: make spec-check
+
+      - name: Run Containerized Tests
+        # This ensures the code works in the identical environment the agents use
+        run: make test
