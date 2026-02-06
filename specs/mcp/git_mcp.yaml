@@ -1,0 +1,18 @@
+resources:
+  repo:
+    type: git
+    path: ./
+    description: Local git repo used for GitOps (agent personalities, prompts)
+
+tools:
+  git_tool:
+    type: git
+    transport: stdio
+    commands:
+      - commit
+      - branch
+      - log
+      - status
+      - checkout
+    resources:
+      - repo

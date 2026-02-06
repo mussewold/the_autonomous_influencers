@@ -1,0 +1,14 @@
+resources:
+  postgres:
+    type: postgres
+    dsn: ${POSTGRES_DSN}
+    description: Postgres transactional store for user data and operational logs
+
+tools:
+  postgres_tool:
+    type: database
+    transport: stdio
+    resources:
+      - postgres
+    migrations:
+      - specs/db/schema.sql

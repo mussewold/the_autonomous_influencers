@@ -1,0 +1,19 @@
+resources:
+  filesystem:
+    type: directory
+    path: ./
+    description: Project root; allow read/write for SOUL.md and AGENTS.md
+
+tools:
+  filesystem_tool:
+    type: filesystem
+    transport: stdio
+    permissions:
+      read: true
+      write: true
+      paths:
+        - SOUL.md
+        - AGENTS.md
+        - .
+    resources:
+      - filesystem
